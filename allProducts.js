@@ -40,6 +40,7 @@ const createAllProduct = (product) => {
   cartFont.classList.add("fa-cart-plus");
   searchContainer.appendChild(searchFont);
   cartContainer.appendChild(cartFont);
+  cartContainer.dataset.productId = product.id;
   imageOverlay.appendChild(searchContainer);
   imageOverlay.appendChild(cartContainer);
   searchContainer.href = `/product.html?id=${product.id}`;

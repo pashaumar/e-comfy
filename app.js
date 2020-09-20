@@ -63,10 +63,26 @@ const cartContainer = document.querySelectorAll(".cart-container");
 let cartValue = 0;
 
 for (item of cartContainer) {
-  item.parentElement.children[1].addEventListener("click", () => {
-    cartValue++;
-    localStorage.setItem("cart-value", cartValue);
-    itemsInCart.innerHTML = localStorage.getItem("cart-value");
+  const productId = parseInt(item.dataset.productId);
+  const product = getProductById(productId);
+  item.addEventListener("click", () => {
+    const cartItems = JSON.parse(localStorage.getItem("cart"));
+    if (!!cartItems === false) {
+      const cartItems = [];
+      cartItems.push({ ...product, quantity: 1 });
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      itemsInCart.innerHTML = 1;
+      return;
+    }
+    if (isItemAlreadyInCart(productId, cartItems)) {
+      const newCartItems = increaseItemCount(productId, cartItems);
+      localStorage.setItem("cart", JSON.stringify(newCartItems));
+      itemsInCart.innerHTML = getCartQuantity(newCartItems);
+    } else {
+      cartItems.push({ ...product, quantity: 1 });
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      itemsInCart.innerHTML = getCartQuantity(cartItems);
+    }
   });
 }
 
@@ -83,5 +99,9 @@ burgerCross.addEventListener("click", () => {
   burger.style.display = "block";
   burgerCross.style.display = "none";
 });
-let cartCount = localStorage.getItem("cart-value");
-itemsInCart.innerHTML = cartCount;
+let cartItems = JSON.parse(localStorage.getItem("cart"));
+if (!cartItems) {
+  itemsInCart.innerHTML = 0;
+} else {
+  itemsInCart.innerHTML = getCartQuantity(cartItems);
+}

@@ -1,3 +1,4 @@
+console.log("products.js");
 const allProducts = [
   {
     id: 1,

@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+.links {
+  display: flex;
+  /* justify-content: space-evenly; */
+  /* flex: 1; */
+  list-style: none;
+}
+.links li {
+  padding: 0 20px;
+}
+.links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+.links li a:hover {
+  color: rgba(235, 47, 6, 1);
+  transition: 0.3s;
+}
+.logo {
+  flex: 1;
+  text-align: center;
+  font-family: "Caveat", cursive;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  /* color: white; */
+}
+.cart {
+  width: 50px;
+  height: 50px;
+  text-align: right;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+.cart i {
+  font-size: 35px;
+  /* color: white; */
+  cursor: pointer;
+}
+.items-in-cart {
+  color: white;
+  background-color: orange;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  position: absolute;
+  top: -10px;
+  right: 0;
+  font-size: 0.6rem;
+}
+.cart-sidebar {
+  width: 400px;
+  position: fixed;
+  min-height: 100vh;
+  background-color: white;
+  transform: translateX(100%);
+  top: 0;
+  right: 0;
+  z-index: 1;
+  transition: all 0.8s ease;
+}
+.fa-times {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.page-title {
+  padding: 2rem 5rem;
+  margin: 10px 0;
+  font-weight: 500;
+  /* font-size: 3rem; */
+  background-color: rgba(223, 249, 251, 0.5);
+  color: rgba(0, 184, 148, 1);
+}
+.history {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 3rem;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+p {
+  width: 60%;
+  margin: auto;
+  color: rgba(0, 184, 148, 1);
+  letter-spacing: 2px;
+  line-height: 30px;
+  text-align: center;
+}
+.home-items {
+  display: none;
+}
+.checkout {
+  position: absolute;
+  bottom: 20px;
+  left: 150px;
+  cursor: pointer;
+  background-color: rgba(243, 156, 18, 1);
+  color: white;
+  width: 130px;
+  text-transform: uppercase;
+  padding: 0.6rem;
+  text-align: center;
+  border-radius: 10px;
+  letter-spacing: 2px;
+}
+.checkout:hover {
+  background-color: white;
+  color: rgba(243, 156, 18, 1);
+  border: 1px solid rgba(243, 156, 18, 1);
+  transition: 0.5s;
+}

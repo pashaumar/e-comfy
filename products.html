@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="products.css" type="text/css" />
+    <title>Products</title>
+  </head>
+  <body>
+    <div class="cart-sidebar"><i class="fas cart-cross fa-times"></i></div>
+    <nav>
+      <div class="burger">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <div class="burger-cross"><i class="fas fa-times"></i></div>
+      </ul>
+      <h1 class="logo">Comfy</h1>
+      <div class="cart">
+        <i class="fas fa-cart-plus"></i>
+        <div class="items-in-cart">0</div>
+      </div>
+    </nav>
+    <h1 class="page-title">Home / Products</h1>
+
+    <div class="products-info">
+      <div class="company-tag">
+        <input
+          type="search"
+          name="serach"
+          id="search"
+          placeholder="search..."
+        />
+        <h4 class="company-heading">Company</h4>
+        <ul class="company-links">
+          <li id="all">All</li>
+          <li id="ikea">Ikea</li>
+          <li id="marcos">Marcos</li>
+          <li id="caressa">Caressa</li>
+          <li id="liddy">Liddy</li>
+        </ul>
+        <h4 class="price">Price</h4>
+        <input
+          type="range"
+          name="range"
+          id="range"
+          min="1"
+          max="100"
+          value="100"
+          step="1"
+        />
+        <p class="range-value">Value : $ 100</p>
+      </div>
+      <div class="products-with-images"></div>
+    </div>
+    <div class="home-items"></div>
+
+    <script src="products.js"></script>
+    <script src="allProducts.js"></script>
+    <script src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b4cbc13fa2.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
